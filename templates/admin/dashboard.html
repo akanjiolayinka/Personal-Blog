@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard - Personal Blog{% endblock %}
+{% block content %}
+  <div class="bar">
+    <h1>Dashboard</h1>
+    <a class="btn" href="{{ url_for('add_form') }}">New Article</a>
+  </div>
+  {% if articles %}
+  <table class="tbl">
+    <thead><tr><th>Title</th><th>Date</th><th>Slug</th><th></th></tr></thead>
+    <tbody>
+      {% for a in articles %}
+      <tr>
+        <td><a href="{{ url_for('article', slug=a.slug) }}" target="_blank">{{ a.title }}</a></td>
+        <td>{{ a.date }}</td>
+        <td><code>{{ a.slug }}</code></td>
+        <td class="right">
+          <a class="btn ghost" href="{{ url_for('edit_form', slug=a.slug) }}">Edit</a>
+          <form method="post" action="{{ url_for('delete_post', slug=a.slug) }}" style="display:inline" onsubmit="return confirm('Delete this article?')">
+            <button class="btn danger">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>No posts yet.</p>
+  {% endif %}
+{% endblock %}

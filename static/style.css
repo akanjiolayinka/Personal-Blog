@@ -1,0 +1,25 @@
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Arial;background:#f8fafc;color:#0f172a}
+a{color:#1d4ed8;text-decoration:none} a:hover{text-decoration:underline}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+.top{background:#111827;color:#e5e7eb}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 16px}
+.brand{font-weight:700;color:#fff}
+nav a{margin-left:12px;color:#e5e7eb}
+.foot{border-top:1px solid #e5e7eb;margin-top:40px;padding:16px 0;color:#475569}
+h1,h2{line-height:1.2}
+.muted{color:#64748b}
+.card{background:#ffffff;border:1px solid #e5e7eb;border-radius:10px;padding:16px}
+.list{list-style:none;padding:0;display:grid;gap:12px}
+.btn{display:inline-block;background:#1d4ed8;color:#fff;padding:.5rem .9rem;border-radius:8px;border:0}
+.btn:hover{filter:brightness(1.05)}
+.btn.ghost{background:transparent;border:1px solid #cbd5e1;color:#0f172a}
+.btn.danger{background:#dc2626}
+.tbl{width:100%;border-collapse:collapse;border:1px solid #e5e7eb;background:#fff;border-radius:10px;overflow:hidden}
+.tbl th,.tbl td{padding:.6rem;border-bottom:1px solid #e5e7eb}
+.tbl thead th{background:#f1f5f9;text-align:left}
+.right{text-align:right}
+label{display:block;margin:.6rem 0 .2rem}
+input,textarea{width:100%;padding:.55rem;border:1px solid #cbd5e1;border-radius:8px}
+.error{color:#b91c1c}
+.content pre{background:#0f172a;color:#e5e7eb;padding:12px;border-radius:8px;overflow:auto}

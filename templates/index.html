@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Home - Personal Blog{% endblock %}
+{% block content %}
+  <h1>Articles</h1>
+  {% if articles %}
+  <ul class="list">
+    {% for a in articles %}
+    <li class="card">
+      <h2><a href="{{ url_for('article', slug=a.slug) }}">{{ a.title }}</a></h2>
+      <p class="muted">Published: {{ a.date }}</p>
+      <p>{{ a.content[:180] }}{% if a.content|length > 180 %}…{% endif %}</p>
+      <a class="btn" href="{{ url_for('article', slug=a.slug) }}">Read</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No posts yet.</p>
+  {% endif %}
+{% endblock %}
