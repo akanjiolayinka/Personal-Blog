@@ -6,8 +6,15 @@ from functools import wraps
 
 from flask import Flask, render_template, request, redirect, url_for, abort, Response
 import markdown as md
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+
+# Load environment variables from a local .env file if present
+load_dotenv()
+
+# Flask secret key (used for sessions/CSRF if needed)
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "change-me")
 
 # Basic auth defaults; can be overridden by env vars
 ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "Olayinka")
